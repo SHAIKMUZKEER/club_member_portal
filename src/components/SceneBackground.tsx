@@ -23,7 +23,7 @@ function Rig() {
   const { camera } = useThree();
   useFrame((_s, delta) => {
     // zoom in near the centre, out toward the edges
-    const targetZ = 5.4 + POINTER.dist * 2.4;
+    const targetZ = 7.6 + POINTER.dist * 2.6;
     const k = 1 - Math.exp(-delta * 3);
     camera.position.z += (targetZ - camera.position.z) * k;
     camera.position.x += (POINTER.x * 0.6 - camera.position.x) * k;
@@ -53,7 +53,7 @@ function Nodes() {
               emissive="#7C3AED"
               emissiveIntensity={0.45}
               transparent
-              opacity={0.75}
+              opacity={0.45}
             />
           </Icosahedron>
         </Float>
@@ -86,17 +86,17 @@ function Cluster() {
             color="#7C3AED"
             wireframe
             transparent
-            opacity={0.5}
+            opacity={0.28}
             emissive="#9333EA"
             emissiveIntensity={0.35}
           />
         </TorusKnot>
       </Float>
       <Torus args={[2.35, 0.012, 12, 140]} rotation={[Math.PI / 2.5, 0, 0]}>
-        <meshStandardMaterial color="#9333EA" transparent opacity={0.55} />
+        <meshStandardMaterial color="#9333EA" transparent opacity={0.3} />
       </Torus>
       <Torus args={[2.85, 0.01, 12, 140]} rotation={[Math.PI / 1.7, 0.5, 0]}>
-        <meshStandardMaterial color="#7C3AED" transparent opacity={0.4} />
+        <meshStandardMaterial color="#7C3AED" transparent opacity={0.24} />
       </Torus>
       <Nodes />
     </group>
