@@ -98,6 +98,12 @@ function Landing() {
                 </Suspense>
               )}
             </div>
+            <img
+              src={sbgLockup.url}
+              alt="AWS Student Builder Group at RGUKT-ONGOLE lockup"
+              loading="lazy"
+              className="pointer-events-none absolute inset-0 m-auto w-[78%] rounded-2xl border border-border/60 shadow-xl"
+            />
           </div>
         </section>
 
