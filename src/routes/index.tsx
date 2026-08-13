@@ -91,21 +91,17 @@ function Landing() {
             </div>
           </div>
 
-          <div className="relative h-[320px] w-full sm:h-[420px]">
-            <div className="glass absolute inset-0 overflow-hidden rounded-3xl">
-              {mounted && (
-                <Suspense fallback={null}>
-                  <ThreeHero />
-                </Suspense>
-              )}
+          <div className="relative w-full">
+            <div className="glass glass-hover overflow-hidden rounded-3xl p-3">
+              <img
+                src={sbgLockup.url}
+                alt="AWS Student Builder Group at RGUKT-ONGOLE lockup"
+                loading="lazy"
+                className="w-full rounded-2xl"
+              />
             </div>
-            <img
-              src={sbgLockup.url}
-              alt="AWS Student Builder Group at RGUKT-ONGOLE lockup"
-              loading="lazy"
-              className="pointer-events-none absolute inset-0 m-auto w-[78%] rounded-2xl border border-border/60 shadow-xl"
-            />
           </div>
+
         </section>
 
         <section className="mx-auto w-full max-w-6xl px-4 pb-24">
