@@ -1,13 +1,10 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { Suspense, lazy, useEffect, useState } from "react";
 import { BookOpen, MessageSquare, ShieldCheck, Sparkle } from "lucide-react";
 import { AppHeader } from "@/components/AppHeader";
 import { ClubBadge } from "@/components/ClubBadge";
 import { Button } from "@/components/ui/button";
 import { useAuth, isVerified } from "@/hooks/useAuth";
 import sbgLockup from "@/assets/sbg-lockup.png.asset.json";
-
-const ThreeHero = lazy(() => import("@/components/ThreeHero"));
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -50,10 +47,6 @@ const FEATURES = [
 
 function Landing() {
   const { user } = useAuth();
-  const [mounted, setMounted] = useState(false);
-
-  useEffect(() => setMounted(true), []);
-
   return (
     <div className="hero-glow min-h-screen">
       <AppHeader />
@@ -91,21 +84,17 @@ function Landing() {
             </div>
           </div>
 
-          <div className="relative h-[320px] w-full sm:h-[420px]">
-            <div className="glass absolute inset-0 overflow-hidden rounded-3xl">
-              {mounted && (
-                <Suspense fallback={null}>
-                  <ThreeHero />
-                </Suspense>
-              )}
+          <div className="relative w-full">
+            <div className="glass glass-hover overflow-hidden rounded-3xl p-3">
+              <img
+                src={sbgLockup.url}
+                alt="AWS Student Builder Group at RGUKT-ONGOLE lockup"
+                loading="lazy"
+                className="w-full rounded-2xl"
+              />
             </div>
-            <img
-              src={sbgLockup.url}
-              alt="AWS Student Builder Group at RGUKT-ONGOLE lockup"
-              loading="lazy"
-              className="pointer-events-none absolute inset-0 m-auto w-[78%] rounded-2xl border border-border/60 shadow-xl"
-            />
           </div>
+
         </section>
 
         <section className="mx-auto w-full max-w-6xl px-4 pb-24">

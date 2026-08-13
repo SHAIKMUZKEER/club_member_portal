@@ -9,6 +9,8 @@ import { ClubBadge } from "@/components/ClubBadge";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import sbgPoster from "@/assets/sbg-poster.png.asset.json";
+
 
 export const Route = createFileRoute("/login")({
   head: () => ({
@@ -80,9 +82,11 @@ function LoginPage() {
   return (
     <div className="hero-glow min-h-screen">
       <AppHeader />
-      <main className="mx-auto flex w-full max-w-md flex-col items-center px-4 py-14">
+      <main className="mx-auto grid w-full max-w-5xl items-center gap-10 px-4 py-14 lg:grid-cols-[minmax(0,1fr)_minmax(0,1fr)]">
+        <div className="flex w-full max-w-md flex-col items-center justify-self-center">
         <ClubBadge className="mb-6" />
         <div className="glass w-full rounded-2xl p-7 shadow-2xl">
+
           {mode === "signin" ? (
             <>
               <h1 className="text-2xl font-semibold">Sign in</h1>
@@ -183,7 +187,23 @@ function LoginPage() {
             </>
           )}
         </div>
+        </div>
+
+        <aside className="order-first lg:order-none">
+          <div className="glass glass-hover overflow-hidden rounded-3xl p-3">
+            <img
+              src={sbgPoster.url}
+              alt="AWS Student Builder Group at RGUKT-ONGOLE — Powered by students, built on AWS"
+              className="w-full rounded-2xl"
+              loading="lazy"
+            />
+          </div>
+          <p className="mt-4 text-center text-sm text-muted-foreground lg:text-left">
+            AWS Student Builder Group at RGUKT-ONGOLE — powered by students, built on AWS.
+          </p>
+        </aside>
       </main>
+
     </div>
   );
 }
