@@ -14,7 +14,6 @@ import { Route as ChatRouteImport } from './routes/chat'
 import { Route as LoginRouteImport } from './routes/login'
 import { Route as ResetPasswordRouteImport } from './routes/reset-password'
 import { Route as SignupRouteImport } from './routes/signup'
-import { Route as ApiPublicKbSelftestRouteImport } from './routes/api/public/kb-selftest'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -41,11 +40,6 @@ const SignupRoute = SignupRouteImport.update({
   path: '/signup',
   getParentRoute: () => rootRouteImport,
 } as any)
-const ApiPublicKbSelftestRoute = ApiPublicKbSelftestRouteImport.update({
-  id: '/api/public/kb-selftest',
-  path: '/api/public/kb-selftest',
-  getParentRoute: () => rootRouteImport,
-} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -53,7 +47,6 @@ export interface FileRoutesByFullPath {
   '/login': typeof LoginRoute
   '/reset-password': typeof ResetPasswordRoute
   '/signup': typeof SignupRoute
-  '/api/public/kb-selftest': typeof ApiPublicKbSelftestRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -61,7 +54,6 @@ export interface FileRoutesByTo {
   '/login': typeof LoginRoute
   '/reset-password': typeof ResetPasswordRoute
   '/signup': typeof SignupRoute
-  '/api/public/kb-selftest': typeof ApiPublicKbSelftestRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -70,33 +62,13 @@ export interface FileRoutesById {
   '/login': typeof LoginRoute
   '/reset-password': typeof ResetPasswordRoute
   '/signup': typeof SignupRoute
-  '/api/public/kb-selftest': typeof ApiPublicKbSelftestRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths:
-    | '/'
-    | '/chat'
-    | '/login'
-    | '/reset-password'
-    | '/signup'
-    | '/api/public/kb-selftest'
+  fullPaths: '/' | '/chat' | '/login' | '/reset-password' | '/signup'
   fileRoutesByTo: FileRoutesByTo
-  to:
-    | '/'
-    | '/chat'
-    | '/login'
-    | '/reset-password'
-    | '/signup'
-    | '/api/public/kb-selftest'
-  id:
-    | '__root__'
-    | '/'
-    | '/chat'
-    | '/login'
-    | '/reset-password'
-    | '/signup'
-    | '/api/public/kb-selftest'
+  to: '/' | '/chat' | '/login' | '/reset-password' | '/signup'
+  id: '__root__' | '/' | '/chat' | '/login' | '/reset-password' | '/signup'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -105,7 +77,6 @@ export interface RootRouteChildren {
   LoginRoute: typeof LoginRoute
   ResetPasswordRoute: typeof ResetPasswordRoute
   SignupRoute: typeof SignupRoute
-  ApiPublicKbSelftestRoute: typeof ApiPublicKbSelftestRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -145,13 +116,6 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof SignupRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/api/public/kb-selftest': {
-      id: '/api/public/kb-selftest'
-      path: '/api/public/kb-selftest'
-      fullPath: '/api/public/kb-selftest'
-      preLoaderRoute: typeof ApiPublicKbSelftestRouteImport
-      parentRoute: typeof rootRouteImport
-    }
   }
 }
 
@@ -161,7 +125,6 @@ const rootRouteChildren: RootRouteChildren = {
   LoginRoute: LoginRoute,
   ResetPasswordRoute: ResetPasswordRoute,
   SignupRoute: SignupRoute,
-  ApiPublicKbSelftestRoute: ApiPublicKbSelftestRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
