@@ -5,6 +5,7 @@ import { AppHeader } from "@/components/AppHeader";
 import { ClubBadge } from "@/components/ClubBadge";
 import { Button } from "@/components/ui/button";
 import { useAuth, isVerified } from "@/hooks/useAuth";
+import sbgLockup from "@/assets/sbg-lockup.png.asset.json";
 
 const ThreeHero = lazy(() => import("@/components/ThreeHero"));
 
