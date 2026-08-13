@@ -14,13 +14,78 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      kb_chunks: {
+        Row: {
+          content: string
+          created_at: string
+          doc: string
+          embedding: string | null
+          heading: string
+          id: string
+        }
+        Insert: {
+          content: string
+          created_at?: string
+          doc: string
+          embedding?: string | null
+          heading: string
+          id?: string
+        }
+        Update: {
+          content?: string
+          created_at?: string
+          doc?: string
+          embedding?: string | null
+          heading?: string
+          id?: string
+        }
+        Relationships: []
+      }
+      messages: {
+        Row: {
+          content: string
+          created_at: string
+          feedback: number | null
+          id: string
+          role: string
+          sources: Json
+          user_id: string
+        }
+        Insert: {
+          content: string
+          created_at?: string
+          feedback?: number | null
+          id?: string
+          role: string
+          sources?: Json
+          user_id: string
+        }
+        Update: {
+          content?: string
+          created_at?: string
+          feedback?: number | null
+          id?: string
+          role?: string
+          sources?: Json
+          user_id?: string
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
     }
     Functions: {
-      [_ in never]: never
+      match_kb_chunks: {
+        Args: { match_count?: number; query_embedding: string }
+        Returns: {
+          content: string
+          doc: string
+          heading: string
+          id: string
+          similarity: number
+        }[]
+      }
     }
     Enums: {
       [_ in never]: never
