@@ -1,13 +1,10 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { Suspense, lazy, useEffect, useState } from "react";
 import { BookOpen, MessageSquare, ShieldCheck, Sparkle } from "lucide-react";
 import { AppHeader } from "@/components/AppHeader";
 import { ClubBadge } from "@/components/ClubBadge";
 import { Button } from "@/components/ui/button";
 import { useAuth, isVerified } from "@/hooks/useAuth";
 import sbgLockup from "@/assets/sbg-lockup.png.asset.json";
-
-const ThreeHero = lazy(() => import("@/components/ThreeHero"));
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -50,10 +47,6 @@ const FEATURES = [
 
 function Landing() {
   const { user } = useAuth();
-  const [mounted, setMounted] = useState(false);
-
-  useEffect(() => setMounted(true), []);
-
   return (
     <div className="hero-glow min-h-screen">
       <AppHeader />
