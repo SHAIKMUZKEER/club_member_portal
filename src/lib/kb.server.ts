@@ -29,7 +29,7 @@ export function chunkDocuments(): Chunk[] {
       const match = /^#{2,3}\s+(.*)$/.exec(line);
       if (match) {
         flush();
-        heading = match[1].trim();
+        heading = (match[1] ?? "").trim() || "Overview";
         continue;
       }
       if (/^#\s+/.test(line)) continue;
