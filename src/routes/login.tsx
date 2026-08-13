@@ -9,6 +9,8 @@ import { ClubBadge } from "@/components/ClubBadge";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import sbgPoster from "@/assets/sbg-poster.png.asset.json";
+
 
 export const Route = createFileRoute("/login")({
   head: () => ({
@@ -185,7 +187,23 @@ function LoginPage() {
             </>
           )}
         </div>
+        </div>
+
+        <aside className="order-first lg:order-none">
+          <div className="glass glass-hover overflow-hidden rounded-3xl p-3">
+            <img
+              src={sbgPoster.url}
+              alt="AWS Student Builder Group at RGUKT-ONGOLE — Powered by students, built on AWS"
+              className="w-full rounded-2xl"
+              loading="lazy"
+            />
+          </div>
+          <p className="mt-4 text-center text-sm text-muted-foreground lg:text-left">
+            AWS Student Builder Group at RGUKT-ONGOLE — powered by students, built on AWS.
+          </p>
+        </aside>
       </main>
+
     </div>
   );
 }
