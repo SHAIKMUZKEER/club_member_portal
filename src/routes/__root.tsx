@@ -77,11 +77,18 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Lovable App" },
-      { name: "description", content: "Lovable Generated Project" },
-      { name: "author", content: "Lovable" },
-      { property: "og:title", content: "Lovable App" },
-      { property: "og:description", content: "Lovable Generated Project" },
+      { title: "AWS Builder Copilot | RGUKT-ONGOLE" },
+      {
+        name: "description",
+        content:
+          "AI copilot for the AWS Student Builder Group at RGUKT-ONGOLE, grounded in official club documents.",
+      },
+      { name: "author", content: "AWS Student Builder Group at RGUKT-ONGOLE" },
+      { property: "og:title", content: "AWS Builder Copilot | RGUKT-ONGOLE" },
+      {
+        property: "og:description",
+        content: "Grounded answers from the official AWS Student Builder Group knowledge base.",
+      },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:site", content: "@Lovable" },
