@@ -5,6 +5,7 @@ import { AppHeader } from "@/components/AppHeader";
 import { ClubBadge } from "@/components/ClubBadge";
 import { Button } from "@/components/ui/button";
 import { useAuth, isVerified } from "@/hooks/useAuth";
+import sbgLockup from "@/assets/sbg-lockup.png.asset.json";
 
 const ThreeHero = lazy(() => import("@/components/ThreeHero"));
 
@@ -98,6 +99,12 @@ function Landing() {
                 </Suspense>
               )}
             </div>
+            <img
+              src={sbgLockup.url}
+              alt="AWS Student Builder Group at RGUKT-ONGOLE lockup"
+              loading="lazy"
+              className="pointer-events-none absolute inset-0 m-auto w-[78%] rounded-2xl border border-border/60 shadow-xl"
+            />
           </div>
         </section>
 
