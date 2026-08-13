@@ -6,9 +6,10 @@
 
 /*
  * AWS Student Builder Copilot design system.
- * Dark-first: deep charcoal surfaces with a violet accent.
+ * Light-first: soft slate/white surfaces with a violet accent.
  * All colors are oklch semantic tokens — never hardcode colors in components.
  */
+
 
 @theme inline {
   --radius-sm: calc(var(--radius) - 4px);
