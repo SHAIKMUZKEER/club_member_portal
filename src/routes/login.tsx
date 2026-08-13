@@ -80,9 +80,11 @@ function LoginPage() {
   return (
     <div className="hero-glow min-h-screen">
       <AppHeader />
-      <main className="mx-auto flex w-full max-w-md flex-col items-center px-4 py-14">
+      <main className="mx-auto grid w-full max-w-5xl items-center gap-10 px-4 py-14 lg:grid-cols-[minmax(0,1fr)_minmax(0,1fr)]">
+        <div className="flex w-full max-w-md flex-col items-center justify-self-center">
         <ClubBadge className="mb-6" />
         <div className="glass w-full rounded-2xl p-7 shadow-2xl">
+
           {mode === "signin" ? (
             <>
               <h1 className="text-2xl font-semibold">Sign in</h1>
