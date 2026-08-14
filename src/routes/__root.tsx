@@ -9,6 +9,8 @@ import {
 } from "@tanstack/react-router";
 import { Suspense, lazy, useEffect, useState, type ReactNode } from "react";
 
+import { ThemeProvider } from "next-themes";
+
 import appCss from "../styles.css?url";
 import { AuthProvider } from "../hooks/useAuth";
 import { Toaster } from "../components/ui/sonner";
@@ -133,6 +135,7 @@ function RootComponent() {
 
   return (
     <QueryClientProvider client={queryClient}>
+      <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
       <AuthProvider>
         {mounted && (
           <Suspense fallback={null}>
@@ -143,6 +146,7 @@ function RootComponent() {
         <Outlet />
         <Toaster position="top-center" richColors />
       </AuthProvider>
+      </ThemeProvider>
     </QueryClientProvider>
   );
 }
