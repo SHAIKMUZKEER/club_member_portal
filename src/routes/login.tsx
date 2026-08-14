@@ -8,6 +8,7 @@ import { AppHeader } from "@/components/AppHeader";
 import { ClubBadge } from "@/components/ClubBadge";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import { PasswordInput } from "@/components/PasswordInput";
 import { Label } from "@/components/ui/label";
 import sbgPoster from "@/assets/sbg-poster.png.asset.json";
 
@@ -108,9 +109,8 @@ function LoginPage() {
                 </div>
                 <div className="space-y-2">
                   <Label htmlFor="password">Password</Label>
-                  <Input
+                  <PasswordInput
                     id="password"
-                    type="password"
                     autoComplete="current-password"
                     required
                     value={password}
