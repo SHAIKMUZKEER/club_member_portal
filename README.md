@@ -921,7 +921,7 @@ Potential future enhancements include:
 
 ### 🌐 Live Application
 
-👉 **[Open Live App](YOUR_LIVE_APP_URL)**
+👉 **[Open Live App](https://d-prompt-pal.lovable.app/)**
 
 ### 👤 LinkedIn — Your Profile
 
